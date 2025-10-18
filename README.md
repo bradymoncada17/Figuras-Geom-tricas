@@ -25,6 +25,7 @@ Aplicación Windows Forms para crear y visualizar figuras geométricas (Rectáng
 
 ## Autores
 - Brady Alexander Moncada Jimenez - Herramientas de Programación II - Semestre 3
+- David Muños Suarez - Herramientas de Programación II - Semestre 3
 
 ## Captura de Pruebas
 <img width="969" height="543" alt="image" src="https://github.com/user-attachments/assets/4d9967fd-c975-44a5-8a66-8d19cf920e38" />
