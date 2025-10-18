@@ -53,5 +53,20 @@ namespace Figuras_Geométricas
                 pbColor.BackColor = colorSeleccionado;
             }
         }
+
+        private void cmbFigura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tipo = cmbFigura.SelectedItem.ToString();
+            if (tipo.ToLower().Contains("línea") || tipo.ToLower().Contains("linea"))
+            {
+                nudX2.Enabled = nudY2.Enabled = true;
+                nudTamano.Enabled = false;
+            }
+            else
+            {
+                nudX2.Enabled = nudY2.Enabled = false;
+                nudTamano.Enabled = true;
+            }
+        }
     }
 }

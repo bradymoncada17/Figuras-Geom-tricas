@@ -128,6 +128,7 @@
             this.cmbFigura.Name = "cmbFigura";
             this.cmbFigura.Size = new System.Drawing.Size(121, 21);
             this.cmbFigura.TabIndex = 8;
+            this.cmbFigura.SelectedIndexChanged += new System.EventHandler(this.cmbFigura_SelectedIndexChanged);
             // 
             // lblTipo
             // 
