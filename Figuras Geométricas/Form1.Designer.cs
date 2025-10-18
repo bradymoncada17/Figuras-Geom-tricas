@@ -116,11 +116,12 @@
             // 
             // pbColor
             // 
+            this.pbColor.BackColor = System.Drawing.Color.Transparent;
             this.pbColor.Image = ((System.Drawing.Image)(resources.GetObject("pbColor.Image")));
-            this.pbColor.Location = new System.Drawing.Point(119, 92);
+            this.pbColor.Location = new System.Drawing.Point(149, 104);
             this.pbColor.Margin = new System.Windows.Forms.Padding(2);
             this.pbColor.Name = "pbColor";
-            this.pbColor.Size = new System.Drawing.Size(92, 60);
+            this.pbColor.Size = new System.Drawing.Size(68, 60);
             this.pbColor.TabIndex = 7;
             this.pbColor.TabStop = false;
             this.pbColor.Click += new System.EventHandler(this.pbColor_Click_1);
@@ -160,7 +161,7 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(118, 64);
+            this.lblColor.Location = new System.Drawing.Point(148, 76);
             this.lblColor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(69, 26);
@@ -181,6 +182,8 @@
             // 
             // pbLienzo
             // 
+            this.pbLienzo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLienzo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbLienzo.Location = new System.Drawing.Point(279, 64);
             this.pbLienzo.Name = "pbLienzo";
             this.pbLienzo.Size = new System.Drawing.Size(620, 327);
@@ -319,7 +322,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Figuras Geométricas";
             ((System.ComponentModel.ISupportInitialize)(this.nudTamano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).EndInit();
