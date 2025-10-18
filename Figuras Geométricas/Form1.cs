@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,19 @@ namespace Figuras_Geométricas
             InitializeComponent();
             InicializarUI();
             pbLienzo.Paint += PbLienzo_Paint;
+        }
+        private string NormalizarTexto(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return s;
+            s = s.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+            foreach (var ch in s)
+            {
+                var uc = CharUnicodeInfo.GetUnicodeCategory(ch);
+                if (uc != UnicodeCategory.NonSpacingMark)
+                    sb.Append(ch);
+            }
+            return sb.ToString().Normalize(NormalizationForm.FormC);
         }
 
         private void InicializarUI()
@@ -72,15 +86,15 @@ namespace Figuras_Geométricas
             int y2 = (int)nudY2.Value;
 
             // Validaciones
-            if (colorSeleccionado == Color.Transparent)
+            if (colorSeleccionado == Color.Black)
             {
                 MessageBox.Show("Seleccione un color.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if ((tipo.ToLower().Contains("línea") || tipo.ToLower().Contains("linea")))
+            // Si es una línea, validar coordenadas X, Y, X2, Y2
+            if (tipo.ToLower().Contains("línea") || tipo.ToLower().Contains("linea"))
             {
-                // Validar que puntos estén dentro del PictureBox
                 if (!PuntoDentroLienzo(x, y) || !PuntoDentroLienzo(x2, y2))
                 {
                     MessageBox.Show("Los puntos de la línea deben estar dentro del lienzo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,12 +103,14 @@ namespace Figuras_Geométricas
             }
             else
             {
+                // Si NO es línea, validar tamaño y límites
                 if (tamaño <= 0)
                 {
                     MessageBox.Show("El tamaño debe ser mayor que 0.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                // Validar que la figura completa quede dentro del lienzo
+
+                // Validar que la figura (rectángulo, círculo o triángulo) no se salga
                 if (!FiguraDentroLienzo(tipo, x, y, tamaño))
                 {
                     MessageBox.Show("La figura no cabe completamente en el lienzo con esas coordenadas/tamaño.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -124,27 +140,29 @@ namespace Figuras_Geométricas
         // Verifica que la figura completa quepa dentro del lienzo
         private bool FiguraDentroLienzo(string tipo, int x, int y, int tamaño)
         {
-            if (tipo.ToLower().Contains("rect"))
+            string tipoNorm = NormalizarTexto(tipo).ToLowerInvariant();
+
+            if (tipoNorm.Contains("rect") || tipoNorm.Contains("rectangulo"))
             {
                 return x >= 0 && y >= 0 && (x + tamaño) <= pbLienzo.Width && (y + tamaño) <= pbLienzo.Height;
             }
 
-            if (tipo.ToLower().Contains("círc") || tipo.ToLower().Contains("circ"))
+            if (tipoNorm.Contains("circ") || tipoNorm.Contains("circulo") || tipoNorm.Contains("circulo")) // "círculo" normalizado -> "circulo"
             {
                 return x >= 0 && y >= 0 && (x + tamaño) <= pbLienzo.Width && (y + tamaño) <= pbLienzo.Height;
             }
 
-            if (tipo.ToLower().Contains("tria"))
+            if (tipoNorm.Contains("tri") || tipoNorm.Contains("triangulo"))
             {
-                // Triángulo equilátero simple con base horizontal
-                int minY = y - (int)(tamaño * 0.866); // altura aprox.
-                return x >= 0 && minY >= 0 && (x + tamaño) <= pbLienzo.Width && y <= pbLienzo.Height;
+                // Triángulo hacia ABAJO: punta inferior en Y + altura
+                int maxY = y + (int)(tamaño * 0.866); // altura ≈ 86.6% del tamaño
+                return x >= 0 && y >= 0 && (x + tamaño) <= pbLienzo.Width && maxY <= pbLienzo.Height;
             }
 
             return false;
         }
 
-     
+
 
         private void lblContador_Click(object sender, EventArgs e)
         {

@@ -50,6 +50,7 @@
             this.nudX2 = new System.Windows.Forms.NumericUpDown();
             this.nudY = new System.Windows.Forms.NumericUpDown();
             this.nudX = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudTamano)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblX
@@ -232,39 +234,68 @@
             // 
             this.nudY2.Location = new System.Drawing.Point(149, 285);
             this.nudY2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudY2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudY2.Name = "nudY2";
-            this.nudY2.Size = new System.Drawing.Size(38, 20);
+            this.nudY2.Size = new System.Drawing.Size(69, 20);
             this.nudY2.TabIndex = 20;
             // 
             // nudX2
             // 
             this.nudX2.Location = new System.Drawing.Point(149, 245);
             this.nudX2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudX2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudX2.Name = "nudX2";
-            this.nudX2.Size = new System.Drawing.Size(38, 20);
+            this.nudX2.Size = new System.Drawing.Size(69, 20);
             this.nudX2.TabIndex = 21;
             // 
             // nudY
             // 
             this.nudY.Location = new System.Drawing.Point(149, 212);
             this.nudY.Margin = new System.Windows.Forms.Padding(2);
+            this.nudY.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudY.Name = "nudY";
-            this.nudY.Size = new System.Drawing.Size(38, 20);
+            this.nudY.Size = new System.Drawing.Size(69, 20);
             this.nudY.TabIndex = 22;
             // 
             // nudX
             // 
             this.nudX.Location = new System.Drawing.Point(149, 182);
             this.nudX.Margin = new System.Windows.Forms.Padding(2);
+            this.nudX.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudX.Name = "nudX";
-            this.nudX.Size = new System.Drawing.Size(38, 20);
+            this.nudX.Size = new System.Drawing.Size(69, 20);
             this.nudX.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(962, 507);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 618);
+            this.ClientSize = new System.Drawing.Size(964, 507);
             this.Controls.Add(this.nudX);
             this.Controls.Add(this.nudY);
             this.Controls.Add(this.nudX2);
@@ -285,6 +316,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblY);
             this.Controls.Add(this.lblX);
+            this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -295,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +355,7 @@
         private System.Windows.Forms.NumericUpDown nudX2;
         private System.Windows.Forms.NumericUpDown nudY;
         private System.Windows.Forms.NumericUpDown nudX;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
