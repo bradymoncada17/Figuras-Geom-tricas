@@ -151,5 +151,23 @@ namespace Figuras_Geométricas
             return false;
         }
 
+     
+
+        private void lblContador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            figuras.Clear();
+            ActualizarContador();
+            pbLienzo.Invalidate();
+        }
     }
 }

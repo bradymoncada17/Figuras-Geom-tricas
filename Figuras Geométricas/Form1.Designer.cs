@@ -85,7 +85,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(298, 20);
+            this.label1.Location = new System.Drawing.Point(448, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 26);
@@ -174,12 +174,13 @@
             this.btnLimpiar.TabIndex = 12;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // pbLienzo
             // 
-            this.pbLienzo.Location = new System.Drawing.Point(471, 182);
+            this.pbLienzo.Location = new System.Drawing.Point(279, 64);
             this.pbLienzo.Name = "pbLienzo";
-            this.pbLienzo.Size = new System.Drawing.Size(100, 50);
+            this.pbLienzo.Size = new System.Drawing.Size(620, 327);
             this.pbLienzo.TabIndex = 13;
             this.pbLienzo.TabStop = false;
             // 
@@ -187,20 +188,22 @@
             // 
             this.lblContador.AutoSize = true;
             this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContador.Location = new System.Drawing.Point(601, 402);
+            this.lblContador.Location = new System.Drawing.Point(711, 402);
             this.lblContador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContador.Name = "lblContador";
             this.lblContador.Size = new System.Drawing.Size(109, 26);
             this.lblContador.TabIndex = 15;
             this.lblContador.Text = "Contador";
+            this.lblContador.Click += new System.EventHandler(this.lblContador_Click);
             // 
             // txtContador
             // 
-            this.txtContador.Location = new System.Drawing.Point(714, 409);
+            this.txtContador.Location = new System.Drawing.Point(824, 409);
             this.txtContador.Margin = new System.Windows.Forms.Padding(2);
             this.txtContador.Name = "txtContador";
             this.txtContador.Size = new System.Drawing.Size(76, 20);
             this.txtContador.TabIndex = 14;
+            this.txtContador.TextChanged += new System.EventHandler(this.txtContador_TextChanged);
             // 
             // label2
             // 
@@ -260,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 450);
+            this.ClientSize = new System.Drawing.Size(911, 618);
             this.Controls.Add(this.nudX);
             this.Controls.Add(this.nudY);
             this.Controls.Add(this.nudX2);
