@@ -121,6 +121,7 @@
             this.pbColor.Size = new System.Drawing.Size(92, 60);
             this.pbColor.TabIndex = 7;
             this.pbColor.TabStop = false;
+            this.pbColor.Click += new System.EventHandler(this.pbColor_Click_1);
             // 
             // cmbFigura
             // 

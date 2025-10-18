@@ -7,23 +7,24 @@ using System.Threading.Tasks;
 
 namespace Figuras_Geométricas
 {
-    public class Triangulo:Figura
+    public class Triangulo : Figura
     {
         public override void Dibujar(Graphics g)
         {
-            // Triángulo equilátero simple con base en (X,Y)
-            Point p1 = new Point(X, Y);
-            Point p2 = new Point(X + Tamaño, Y);
-            Point p3 = new Point(X + Tamaño / 2, Y - (int)(Tamaño * 0.866)); // altura aproximada
-            Point[] pts = { p1, p2, p3 };
+            // Triángulo equilátero simple con base en (X, Y) hacia abajo
+            Point p1 = new Point(X, Y);                      // esquina izquierda
+            Point p2 = new Point(X + Tamaño, Y);             // esquina derecha
+            Point p3 = new Point(X + Tamaño / 2, Y + (int)(Tamaño * 0.866)); // vértice hacia abajo
 
-            using (var brush = new SolidBrush(Color))
-            using (var pen = new Pen(Color, 2))
+            Point[] puntos = { p1, p2, p3 };
+
+            using (SolidBrush brocha = new SolidBrush(Color))
+            using (Pen pluma = new Pen(Color, 2))
             {
-                g.FillPolygon(brush, pts);
-                g.DrawPolygon(pen, pts);
+                g.FillPolygon(brocha, puntos);
+                g.DrawPolygon(pluma, puntos);
             }
         }
+    }
 
     }
-}

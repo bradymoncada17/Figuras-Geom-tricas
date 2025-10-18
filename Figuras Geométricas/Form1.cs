@@ -45,14 +45,7 @@ namespace Figuras_Geométricas
             }
         }
 
-        private void pbColor_Click(object sender, EventArgs e)
-        {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                colorSeleccionado = colorDialog1.Color;
-                pbColor.BackColor = colorSeleccionado;
-            }
-        }
+       
 
         private void cmbFigura_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -168,6 +161,16 @@ namespace Figuras_Geométricas
             figuras.Clear();
             ActualizarContador();
             pbLienzo.Invalidate();
+        }
+
+        private void pbColor_Click_1(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                colorSeleccionado = colorDialog1.Color;
+                pbColor.BackColor = colorSeleccionado;
+            }
+
         }
     }
 }
